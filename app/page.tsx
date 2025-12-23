@@ -139,7 +139,7 @@ const HomePage = () => {
         <Home />
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
@@ -260,7 +260,7 @@ const HomePage = () => {
             </MagneticSocialLink>
           ))}
         </div>
-      </motion.section>
+      </motion.section> */}
     </motion.main>
   )
 }
