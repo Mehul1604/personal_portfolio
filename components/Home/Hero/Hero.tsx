@@ -6,8 +6,8 @@ import ParticlesHero from "./ParticleBackground"
 import { SOCIAL_LINKS } from '../../../app/data'
 
 const Hero = () => {
-    return (
-        <div id='home' className='relative h-screen flex items-center justify-center text-white overflow-hidden flex-col'>
+  return (
+    <div className='relative h-screen flex items-center justify-center text-white overflow-hidden flex-col'>
         <ParticlesHero />
         <div className='relative z-10 flex flex-col items-center'>
             <Image src="/portfolio_pic.jpg" alt="Hero Image" width={150} height={150} 

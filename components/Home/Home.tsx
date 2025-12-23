@@ -180,10 +180,9 @@ const Home = () => {
         <div className="overflow-hidden">
             <Hero />
             <Services />
+            <Skills />
             <Resume />
             <Projects />
-            <Skills />
-            <ClientReview />
             <Blog />
             <Contact />
         </div>

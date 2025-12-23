@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import ServiceCard from "./ServiceCard/ServiceCard";
-// boiler plate component
 
 const Services = () => {
     return (

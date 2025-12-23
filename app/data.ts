@@ -13,6 +13,20 @@ type WorkExperience = {
   end: string
   link: string
   id: string
+  logo?: string
+  tags?: string[]
+  resumePoints?: string[]
+}
+
+type Education = {
+  university: string,
+  title: string,
+  start: string,
+  end: string,
+  id: string,
+  logo?: string,
+  tags?: string[],
+  resumePoints?: string[]
 }
 
 type BlogPost = {
@@ -49,29 +63,77 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
-    end: 'Present',
-    link: 'https://ibelick.com',
-    id: 'work1',
+    company: 'PayPal',
+    title: 'Software Engineer Intern',
+    start: 'May 2025',
+    end: 'Aug 2025',
+    link: 'https://www.paypal.com',
+    id: 'paypal-2025',
+    logo: '/companies/paypal.png',
+    tags: ['Agentic AI', 'Python', 'Springboot'],
+    resumePoints: [
+      'Built an AI-powered Slackbot that automated query resolution in support channels by leveraging multi-agent workflows, reducing response time for support tickets',
+      'Developed an MCP server in Spring Boot, integrated with Claude Code and GitHub Copilot, enabling engineers to investigate live issues directly within their workspace'
+    ]
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
-    id: 'work2',
+    company: 'Endowus',
+    title: 'Software Development Engineer',
+    start: 'Jul 2023',
+    end: 'Jun 2024',
+    link: 'https://www.endowus.com',
+    id: 'endowus-2023',
+    logo: '/companies/endowus.png',
+    tags: ['Scala', 'Akka', 'Kafka'],
+    resumePoints: [
+      'Optimized a trade file processing backend reducing processing time and boosting throughput',
+      'Designed an anomaly detection system to query inconsistent transactions and sending real-time alerts'
+    ]
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
-    id: 'work3',
+    company: 'Zevi.AI',
+    title: 'Artificial Intelligence Engineer Intern',
+    start: 'Mar 2022',
+    end: 'Aug 2022',
+    link: 'https://www.linkedin.com/company/zevi-ai/posts/?feedView=all',
+    id: 'zevi-2022',
+    logo: '/companies/zevi.jpeg',
+    tags: ['PyTorch', 'NLP', 'Production AI'],
+    resumePoints: [
+      'Engineered a search engine by fine-tuning an LLM on product data with scalable deployment on cloud infrastructure and minimal latency',
+      'Crafted a phonetic-based spellcheck algorithm reducing unrecognized multilingual queries and enhancing discovery for regional products'
+    ]
   },
+]
+
+export const EDUCATION: Education[] = [
+  {
+    university: 'University of Illinois at Chicago',
+    title: 'M.S. Computer Science',
+    start: 'Aug 2024',
+    end: 'May 2026',
+    id: 'uic-2024',
+    logo: '/education/uic.png',
+    tags: ['Cloud Computing', 'Advanced Machine Learning', 'Compiler Design'],
+    resumePoints: [
+      'Master of Science in Computer Science',
+      'Focus on advanced concepts in Data Science and ML, cloud computing and systems',
+
+    ]
+  },
+  {
+    university: 'International Institute of Information Technology, Hyderabad',
+    title: 'B.Tech Computer Science Engineering',
+    start: 'Aug 2019',
+    end: 'May 2023',
+    id: 'iiit-hyderabad-2019',
+    logo: '/education/iiith.jpg',
+    tags: ['Data Structures and Algorithms', 'Machine Learning Basics', 'Operating Systems', 'Linear Algebra'],
+    resumePoints: [
+      'Bachelor of Technology in Computer Science Engineering',
+      'Graduated with Honors - Research Assistantship focusing on NLP and Computer Vision'
+    ]
+  }
 ]
 
 export const BLOG_POSTS: BlogPost[] = [

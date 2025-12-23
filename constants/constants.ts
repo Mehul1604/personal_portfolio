@@ -26,11 +26,6 @@ export const NavLinks = [
     },
     {
         id: 6,
-        label: 'Testimonials',
-        url: '#testimonials',
-    },
-    {
-        id: 7,
         label: 'Contact',
         url: '#contact',
     }

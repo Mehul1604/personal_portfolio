@@ -1,11 +1,9 @@
-'use-client'
+"use client"
 import React from "react"
 import ResumeCard from "./ResumeCard";
-import { FaCodepen } from "react-icons/fa6";
-import { BsDatabaseFillGear } from "react-icons/bs";
-import { LuBrainCircuit } from "react-icons/lu";
 import { BiBadge } from "react-icons/bi";
 import { MdCastForEducation } from "react-icons/md";
+import { EDUCATION, WORK_EXPERIENCE } from '../../../app/data'
 
 // boiler plate component
 const Resume = () => {
@@ -18,9 +16,22 @@ const Resume = () => {
                         <span className='text-cyan-200'> Experience</span>
                     </h1>
                     <div className='mt-10' data-aos='zoom-in' data-aos-anchor-placement='top-center'>
-                        <ResumeCard Icon={FaCodepen} role="Software Intern"/>
-                        <ResumeCard Icon={BsDatabaseFillGear} role="Backend Developer"/>
-                        <ResumeCard Icon={LuBrainCircuit} role="Artificial Intelligence Intern"/>
+                            {WORK_EXPERIENCE.map((w) => (
+                                <ResumeCard
+                                    key={w.id}
+                                    logo={w.logo}
+                                    role={w.title}
+                                    date={`${w.start} - ${w.end}`}
+                                    // @ts-ignore
+                                    tags={w.tags}
+                                    // @ts-ignore
+                                    resumePoints={w.resumePoints}
+                                    // @ts-ignore
+                                    company={w.company}
+                                    // @ts-ignore
+                                    link={w.link}
+                                />
+                            ))}
                     </div>
                 </div>
                 {/* Education part */}
@@ -29,8 +40,18 @@ const Resume = () => {
                         <span className='text-cyan-200'> Education</span>
                     </h1>
                     <div className='mt-10' data-aos='zoom-out' data-aos-anchor-placement='top-center' data-aos-delay='300'>
-                        <ResumeCard Icon={BiBadge} role="M.S Computer Science, University of Illinois at Chicago" date="Aug 2024 - May 2026"/>
-                        <ResumeCard Icon={MdCastForEducation} role="B.Tech Computer Science, IIIT-Hyderabad" date="Aug 2019 - May 2023"/>
+                        {EDUCATION.map((e) => (
+                            <ResumeCard
+                                key={e.id}
+                                logo={e.logo}
+                                role={e.university}
+                                date={`${e.start} - ${e.end}`}
+                                // @ts-ignore
+                                tags={e.tags}
+                                // @ts-ignore
+                                resumePoints={e.resumePoints}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
