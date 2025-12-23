@@ -30,3 +30,9 @@
   --sh-property: #73daca;
   --sh-entity: #e0af68;
 }
+
+/* Smooth scroll and account for fixed navbar (nav height = 12vh) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 12vh;
+}

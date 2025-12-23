@@ -37,12 +37,12 @@ const Nav = ({ openNav }: NavProps) => {
      duration-200 h-[12vh] z-[10000] fixed w-full`}>
         <div className='flex items-center h-full justify-between w-[90%] mx-auto'>
             {/* Logo */}
-            <div className='flex items-center space-x-2'>
+            <Link href="#home" className='flex items-center space-x-2' aria-label="Go to top">
                 <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center flex-col'>
                     <FaCode className='w-5 h-5 text-black'/>
                 </div>
                 <h1 className='text-xl hidden sm:block md:text-2xl text-white font-bold'>Mehul Mathur</h1>
-            </div>
+            </Link>
             {/* Navigation Links */}
             <div className='hidden lg:flex items-center space-x-10'>
                 {NavLinks.map((link) => (
@@ -56,14 +56,15 @@ const Nav = ({ openNav }: NavProps) => {
             </div>
             {/* CV Button */}
             <div className='flex items-center space-x-4'>
-                <button className='px-8 py-3.5 text-sm cursor-pointer rounded-lg 
-                bg-blue-800 text-blue-200 hover:bg-white hover:text-black transition-all duration-200 
-                flex items-center space-x-2'>
+                <a
+                    href="/Mehul_Mathur_CV.pdf"
+                    download="Mehul_Mathur_CV.pdf"
+                    aria-label="Download CV"
+                    className='inline-flex items-center px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 text-blue-200 hover:bg-white hover:text-black transition-all duration-200 space-x-2'
+                >
                     <BiDownload className='w-5 h-5'/>
-                    <a href="/Mehul_Mathur_CV.pdf" target="_blank" rel="noopener noreferrer">
-                        Download CV
-                    </a>
-                </button>
+                    <span>Download CV</span>
+                </a>
                 {/* Burger Menu */}
                 <HiBars3BottomRight onClick={openNav} className='w-8 h-8 text-white lg:hidden cursor-pointer'/>
                 

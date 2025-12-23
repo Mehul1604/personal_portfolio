@@ -25,7 +25,7 @@ const responsive = {
 // boiler plate component
 const ClientReview = () => {
     return (
-        <div className='pt-20 pb-16'>
+      <div id='testimonials' className='pt-20 pb-16'>
             <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
                 Kind words from <br/> <span className='text-cyan-200'>my clients</span>
             </h1>
