@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
-import { Header } from './header'
-import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import ResponsiveNav from '@/components/Home/Navbar/ResponsiveNav'
+import Footer from './footer'
+import ScrollToTop from '@/components/Helper/ScrollToTop'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -12,25 +13,22 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nim-fawn.vercel.app/'),
-  alternates: {
-    canonical: '/'
-  },
+  // metadataBase: new URL('https://nim-fawn.vercel.app/'),
+  // alternates: {
+  //   canonical: '/'
+  // },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'Mehul Mathur Portfolio | Next.JS 15',
+    template: '%s | Mehul Mathur Portfolio',
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
+  description:  'Mehul Mathur\'s Portfolio built with Next.js 15, React 19 and Motion-Primitives.',
 };
 
-const geist = Geist({
-  variable: '--font-geist',
+const interFont = Inter({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: '--font-inter-tight',
+  // now this variable name can be used 
 })
 
 export default function RootLayout({
@@ -41,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+        className={`${interFont.variable} antialiased bg-[#0d0d1f]`}
       >
         <ThemeProvider
           enableSystem={true}
@@ -49,13 +47,11 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="system"
         >
-          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
-            <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
-              <Header />
-              {children}
-              <Footer />
-            </div>
-          </div>
+
+          <ResponsiveNav />
+          {children}
+          <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

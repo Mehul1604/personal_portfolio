@@ -19,6 +19,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
+import Home from '@/components/Home/Home'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -123,7 +124,7 @@ function MagneticSocialLink({
   )
 }
 
-export default function Personal() {
+const HomePage = () => {
   return (
     <motion.main
       className="space-y-24"
@@ -135,12 +136,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
-          </p>
-        </div>
+        <Home />
       </motion.section>
 
       <motion.section
@@ -268,3 +264,10 @@ export default function Personal() {
     </motion.main>
   )
 }
+
+export default HomePage
+
+// localhost:3000
+// localhost:3000/about
+// localhost:3000/about/team - nested routes
+// localhost:3000/about/team/[name] - dynamic routes
