@@ -4,7 +4,7 @@ import React from "react";
 type PublicationCardProps = {
     title: string;
     description: string;
-    journal: string;
+    journal?: string;
     link: string;
 }
 
