@@ -161,7 +161,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://x.com/mehulma67701972',
   },
   {
     label: 'LinkedIn',
@@ -169,7 +169,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'Instagram',
-    link: 'https://[ig.me](<http://ig.me>)/m/_mehul_mathur_',
+    link: 'https://ig.me/m/_mehul_mathur_',
   },
 ]
 

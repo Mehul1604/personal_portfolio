@@ -60,11 +60,10 @@ const Contact = () => {
                 {/* text content */}
                 <div>
                     <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200'>
-                        Schedule a call with me to see if I can help
+                        Get in <span className='text-cyan-200'>Touch</span>
                     </h1>
                     <p className='text-gray-400 mt-6 text-base sm:text-lg'>
-                        Reach out to me today and let's discuss how I can help <br />
-                        you achieve your goals!
+                        Reach out to me today for collaborations, inquiries, or just to say hello!
                     </p>
                     <div className='mt-7'>
                         <div className='flex items-center space-x-3 mb-4'>
