@@ -1,37 +1,44 @@
 'use-client'
-import Image from "next/image";
 import React from "react";
 
-type BlogCardProps = {
-    image: string;
+type PublicationCardProps = {
     title: string;
+    description: string;
+    journal: string;
+    link: string;
 }
 
-const BlogCard = ({ image, title }: BlogCardProps) => {
+const BlogCard = ({ title, description, journal, link }: PublicationCardProps) => {
     return (
-        <div>
-            <Image src={image} alt="blog" width={500} height={500} className='object-cover' />
-            <p className='mt-4 text-gray-500 font-medium text-base sm:text-lg'>
-                23 Dec, 2025
-            </p>
-            <h1 className='mt-5 text-lg sm:text-xl font-bold text-white hover:underline hover:text-cyan-200 
-            cursor-pointer transition-all duration-300'>
-
+        <div className='w-full'>
+            <h1 className='mt-2 text-lg sm:text-xl font-bold text-white hover:underline hover:text-cyan-200 cursor-pointer transition-all duration-300'>
                 {title}
             </h1>
-            <div className='mt-4 flex gap-2 items-center'>
-                <p className='px-4 py-1.5 bg-blue-950 text-white text-sm sm:text-base font-bold rounded-full'>
-                    Ml/AI
-                </p>
-                <p className='px-4 py-1.5 bg-blue-950 text-white text-sm sm:text-base font-bold rounded-full'>
-                    Python
-                </p>
-                <p className='px-4 py-1.5 bg-blue-950 text-white text-sm sm:text-base font-bold rounded-full'>
-                    Beginner
-                </p>
+            <p className='mt-3 text-gray-300 text-sm sm:text-base leading-relaxed'>
+                {description}
+            </p>
+
+            <div className='mt-4 flex items-center justify-between'>
+                <div className='inline-flex items-center'>
+                    <span className='px-3 py-1 bg-gray-800 text-gray-200 text-xs sm:text-sm rounded-md'>
+                        {journal}
+                    </span>
+                </div>
+
+                <div>
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View paper: ${title}`}
+                        className='inline-block px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-zinc-900 text-white text-xs sm:text-sm md:text-sm rounded-md transition-colors duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-cyan-500'
+                    >
+                        View Paper
+                    </a>
+                </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default BlogCard;

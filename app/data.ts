@@ -29,11 +29,12 @@ type Education = {
   resumePoints?: string[]
 }
 
-type BlogPost = {
+type Publication = {
   title: string
   description: string
   link: string
   uid: string
+  journal?: string
 }
 
 type SocialLink = {
@@ -116,7 +117,7 @@ export const EDUCATION: Education[] = [
     logo: '/education/uic.png',
     tags: ['Cloud Computing', 'Advanced Machine Learning', 'Compiler Design'],
     resumePoints: [
-      'Master of Science in Computer Science',
+      'University of Illinois at Chicago',
       'Focus on advanced concepts in Data Science and ML, cloud computing and systems',
 
     ]
@@ -130,38 +131,26 @@ export const EDUCATION: Education[] = [
     logo: '/education/iiith.jpg',
     tags: ['Data Structures and Algorithms', 'Machine Learning Basics', 'Operating Systems', 'Linear Algebra'],
     resumePoints: [
-      'Bachelor of Technology in Computer Science Engineering',
+      'International Institute of Information Technology, Hyderabad',
       'Graduated with Honors - Research Assistantship focusing on NLP and Computer Vision'
     ]
   }
 ]
 
-export const BLOG_POSTS: BlogPost[] = [
+export const PUBLICATIONS: Publication[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
+    title: 'TweetBoost: Influence of Social Media on NFT Valuation',
+    description: 'Investigated how social media activity influences NFT valuation by linking large-scale Twitter data with OpenSea marketplace records. Performed feature engineering across social and platform signals, trained XGBoost and other classification models, and conducted statistical analyses to identify key predictors of NFT value and virality.',
+    link: 'https://dl.acm.org/doi/10.1145/3487553.3524642',
+    uid: 'pub-1',
+    journal: 'ACM (Proceedings of the Web Conference 2022 – Companion)',
   },
   {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
-  },
-  {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
-    description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
-    link: '/blog/example-mdx-metadata',
-    uid: 'blog-4',
+    title: 'Co-WIN: Really Winning? Analysing Inequity in India’s Vaccination Response',
+    description: 'Studied systemic inequities in India’s COVID-19 vaccination response through large-scale analysis of Co-WIN and auxiliary public datasets. Performed feature engineering and geospatial data processing, ran machine learning models, and conducted statistical hypothesis testing to measure the effects of policy changes and uncover regional and demographic disparities.',
+    link: 'https://arxiv.org/abs/2202.04433',
+    uid: 'pub-2',
+    journal: 'arXiv:2202.04433, Computers and Society (cs.CY), 2022',
   },
 ]
 
@@ -180,7 +169,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://[ig.me](<http://ig.me>)/m/_mehul_mathur_',
   },
 ]
 

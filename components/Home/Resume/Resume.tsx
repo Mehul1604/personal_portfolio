@@ -44,7 +44,7 @@ const Resume = () => {
                             <ResumeCard
                                 key={e.id}
                                 logo={e.logo}
-                                role={e.university}
+                                role={e.title}
                                 date={`${e.start} - ${e.end}`}
                                 // @ts-ignore
                                 tags={e.tags}

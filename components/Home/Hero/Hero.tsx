@@ -10,7 +10,7 @@ const Hero = () => {
     <div className='relative h-screen flex items-center justify-center text-white overflow-hidden flex-col'>
         <ParticlesHero />
         <div className='relative z-10 flex flex-col items-center'>
-            <Image src="/portfolio_pic.jpg" alt="Hero Image" width={150} height={150} 
+            <Image src="/portfolio_pic.jpeg" alt="Hero Image" width={150} height={150} 
                 className='rounded-full border-8 border-[#0c0c48aa]' data-aos='fade-up'
             />
             <h1 data-aos='fade-up' data-aos-delay='200' className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 text-center tracking-wide'>

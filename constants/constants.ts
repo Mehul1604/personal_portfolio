@@ -6,17 +6,17 @@ export const NavLinks = [
     },
     {
         id: 2,
-        label: 'Services',
+        label: 'About',
         url: '#services',
     },
     {
         id: 3,
-        label: 'Resume',
+        label: 'Experience',
         url: '#resume',
     },
     {
         id: 4,
-        label: 'Works',
+        label: 'Projects',
         url: '#projects',
     },
     {
