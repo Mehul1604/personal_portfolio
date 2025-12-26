@@ -9,20 +9,31 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
+    const host = process.env.SMTP_HOST || 'smtp.gmail.com'
+    const port = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587
+    const secure = process.env.SMTP_SECURE === 'true'
+    const user = process.env.SMTP_USER
+    const pass = process.env.SMTP_PASS
+
+    if (!user || !pass) {
+      console.error('SMTP_USER/SMTP_PASS not configured')
+      return NextResponse.json({ error: 'SMTP configuration missing on server' }, { status: 500 })
+    }
+
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      host,
+      port,
+      secure,
       auth: {
-        user: "mathurmehul3@gmail.com",
-        pass: "puem pwwb ejwx xvbm",
+        user,
+        pass,
       },
     })
 
-    const receiver = "mathurmehul3@gmail.com"
+    const receiver = process.env.CONTACT_RECEIVER || user
 
     const mail = {
-      from: `${name || 'Website Visitor'} <${email}>`,
+      from: `${process.env.FROM_NAME || 'Website Contact'} <${user}>`,
       replyTo: email,
       to: receiver,
       subject: `Portfolio contact: ${name || email}`,
