@@ -10,19 +10,20 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587,
-      secure: process.env.SMTP_SECURE === 'true',
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: "mathurmehul3@gmail.com",
+        pass: "puem pwwb ejwx xvbm",
       },
     })
 
-    const receiver = process.env.RECEIVER_EMAIL || process.env.SMTP_USER
+    const receiver = "mathurmehul3@gmail.com"
 
     const mail = {
       from: `${name || 'Website Visitor'} <${email}>`,
+      replyTo: email,
       to: receiver,
       subject: `Portfolio contact: ${name || email}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,
